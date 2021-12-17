@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-generator",
+  "version": "1.0.0",
+  "description": "need for inquirer",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RauchDavis13/Portfolio-Generator.git"
+  },
+  "author": "Ken Davis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RauchDavis13/Portfolio-Generator/issues"
+  },
+  "homepage": "https://github.com/RauchDavis13/Portfolio-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
