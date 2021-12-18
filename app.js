@@ -36,25 +36,39 @@ const promptUser = () => {
           console.log('Please enter your GitHub username!');
           return false;
         }
+      }
+    },
+    {
+      type: 'confirm',
+      name: 'confirmAbout',
+      message: 'Would you like to enter some information about yourself for an "About" section?',
+      default: true
     },
     {
       type: 'input',
       name: 'about',
-      message: 'Provide some information about yourself:'
+      message: 'Provide some information about yourself:',
+      when: ({ confirmAbout }) => {
+        if(confirmAbout) {
+          return true;
+        } else {
+          return false;
+        }
+      }
     }
   ]);
 };
 
 const promptProject = portfolioData => {
   console.log(`
-==================
-Add a New Project
-==================  
-`);
-// If there's no 'projects' array property, create one
-if(!portfolioData.projects) {
-  portfolioData.projects = [];
-}
+  ==================
+  Add a New Project
+  ==================  
+  `);
+  // If there's no 'projects' array property, create one
+  if(!portfolioData.projects) {
+    portfolioData.projects = [];
+  }
   
   return inquirer.prompt([
     {
@@ -68,6 +82,7 @@ if(!portfolioData.projects) {
           console.log('Please enter your project name!');
           return false;
         }
+      }
     },
     {
       type: 'input',
@@ -80,6 +95,7 @@ if(!portfolioData.projects) {
           console.log('Please enter your product description!');
           return false;
         }
+      }
     },
     {
       type: 'checkbox',
@@ -98,6 +114,7 @@ if(!portfolioData.projects) {
           console.log('Please enter your GitHub link!');
           return false;
         }
+      }
     },
     {
       type: 'confirm',
